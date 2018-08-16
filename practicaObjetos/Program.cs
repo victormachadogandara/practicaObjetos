@@ -4,31 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PrácticaObjetos
+namespace PracticaObjetos
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Persona persona1 = new Persona();
-            persona1.nombre = "Sebas";
-            persona1.apellidos = "The.Rat";
-            persona1.edad = 175;
+            Contacto contacto1 = new Contacto();
 
+            contacto1.Nombre = "Sebastian Encinas";
+            contacto1.TelefonoCasa = "(420) 115 - 2514";
+            contacto1.Direccion = "Orion 1401";
 
-            Console.WriteLine(persona1.nombre + " " + persona1.apellidos + " tiene " + persona1.edad + " años");
+            Console.WriteLine("Nombre: " + contacto1.Nombre);
+            Console.WriteLine("Telefono de casa: " + contacto1.TelefonoCasa);
 
-            persona1.cumplirAños();
+            Contacto contacto2 = new Contacto("Sebastian");
+            Console.WriteLine("Contacto 2");
+            Console.WriteLine("Nombre: " + contacto2.Nombre);
 
-            Console.WriteLine("Ahora " + persona1.nombre + " tiene " + persona1.edad + " años");
+            Contacto contacto3 = new Contacto("Sebas", "123456789", "1234567890", "veracruz ulsa", "sebas_nit_040899@hotmail.com");
+            Console.WriteLine("contacto 3");
+            Console.WriteLine("Nombre: " + contacto3.Nombre);
+            Console.WriteLine("Numero de casa: " + contacto3.TelefonoCasa);
+            Console.WriteLine("Numero celular: " + contacto3.TelefonoCelular);
+            Console.WriteLine("Direccion: " + contacto3.Direccion);
+            Console.WriteLine("Correo electronico: " + contacto3.CorreoElectronico);
 
-            persona1.altura = 1.75f;
-
-            Console.WriteLine(persona1.nombre + " mide " + persona1.altura);
-
-            persona1.crecer(0.12f);
-
-            Console.WriteLine(persona1.nombre + " ahora mide " + persona1.altura);
 
             Console.ReadLine();
         }
